@@ -1,24 +1,15 @@
 import {generateRandomArray} from "./common/generateRandomArray";
 import {bubbleSort} from "./sorting/bubbleSort";
+import {cocktailSort} from "./sorting/cocktailSort";
 
-console.log('Generating random array ...\n')
+// const input: Array<number> = [
+//     21, 93, 77, 99, 17,
+//     15,  5, 53, 51, 84
+// ]
+const input: Array<number> = generateRandomArray(9000, 100000)
 
-const randomArray: Array<number> = generateRandomArray(100, 1000)
+console.log('Input array:')
+console.log(input, '\n')
 
-console.log('The list has been generated:')
-console.log(randomArray, '\n')
-
-console.log(bubbleSort(randomArray))
-
-// import readline from 'node:readline'
-//
-// const rl = readline.createInterface({
-//     input: process.stdin,
-//     output: process.stdout,
-// })
-//
-// rl.question("Choose operation: ", (operationName: string) => {
-//     console.log(operationName)
-//     rl.close()
-// })
-
+console.log(cocktailSort(input))
+console.log(bubbleSort(input))
