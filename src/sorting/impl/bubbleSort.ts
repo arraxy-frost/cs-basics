@@ -1,6 +1,6 @@
-export function bubbleSort(input: Array<number>): Array<number> {
+import {ISortingFunction} from "../ISortingFunction";
 
-    console.log('Run bubble sorting \n ...')
+export const bubbleSort: ISortingFunction = input => {
 
     if (input.length < 2) {
         console.log('Input has length lesser than 2')
@@ -9,11 +9,6 @@ export function bubbleSort(input: Array<number>): Array<number> {
 
     const result: Array<number> = [...input]
 
-    // stat
-    let iterationCount: number = 0
-    let executionTime: number = performance.now()
-
-    // Algo variables
     let store: number = 0
     let isShifted: boolean = false
 
@@ -21,7 +16,6 @@ export function bubbleSort(input: Array<number>): Array<number> {
         isShifted = false
 
         for (let i: number = 1; i < input.length; i++) {
-            iterationCount++
             if (result[i] < result[i - 1]) {
                 store = result[i - 1]
                 result[i - 1] = result[i]
@@ -31,10 +25,6 @@ export function bubbleSort(input: Array<number>): Array<number> {
         }
     }
     while (isShifted)
-
-    console.log('Sorting finished')
-    console.log('Iterations:', iterationCount)
-    console.log('Time:', performance.now() - executionTime)
 
     return result
 }
