@@ -1,10 +1,12 @@
-import {generateRandomArray} from "./common/generateRandomArray";
-import {bubbleSort} from "./sorting/impl/bubbleSort";
-import {cocktailSort} from "./sorting/impl/cocktailSort";
+// import {generateRandomArray} from "./common/generateRandomArray";
+import {insertionSort} from "./sorting/impl/insertionSort";
 
 
-const input: number[] = generateRandomArray(500, 1000)
+// const input: number[] = [...generateRandomArray(10000, 10000)]
+const input: number[] = [
+    41, 85, 62, 70, 64,
+    66, 74, 29, 23, 94
+]
 
-console.log('Input array:\n', input)
-console.log(cocktailSort(input))
-console.log(bubbleSort(input))
+console.log('Unsorted input:', input)
+console.log('Insertion sort:', insertionSort(input))
