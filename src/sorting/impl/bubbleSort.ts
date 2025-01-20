@@ -3,7 +3,6 @@ import {ISortingFunction} from "../ISortingFunction";
 export const bubbleSort: ISortingFunction = input => {
 
     if (input.length < 2) {
-        console.log('Input has length lesser than 2')
         return input
     }
 
@@ -16,6 +15,7 @@ export const bubbleSort: ISortingFunction = input => {
         isShifted = false
 
         for (let i: number = 1; i < input.length; i++) {
+            // Can be done other way with moder js features. Will try it later.
             if (result[i] < result[i - 1]) {
                 store = result[i - 1]
                 result[i - 1] = result[i]
